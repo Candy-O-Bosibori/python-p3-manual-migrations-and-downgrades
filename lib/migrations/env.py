@@ -77,3 +77,10 @@ if context.is_offline_mode():
     run_migrations_offline()
 else:
     run_migrations_online()
+    
+def upgrade() -> None:
+    op.rename_table('students', 'scholars')
+
+
+def downgrade() -> None:
+    op.rename_table('scholars', 'students')
